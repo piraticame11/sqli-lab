@@ -1,0 +1,29 @@
+{
+  "name": "aegis-security-lab",
+  "version": "1.0.0",
+  "description": "Realistic enterprise hardware portal vulnerable to SQL Injection for cybersecurity training and lab screenshots",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "migrate": "node scripts/migrate.js",
+    "test": "node test-lab.js"
+  },
+  "keywords": [
+    "sqli",
+    "security-lab",
+    "ctf",
+    "mysql",
+    "express"
+  ],
+  "author": "Cyber Lab Instructor",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.11.5"
+  }
+}

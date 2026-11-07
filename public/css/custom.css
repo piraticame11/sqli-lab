@@ -1,0 +1,44 @@
+/* Clean Light Theme Watermark & Shopee Style Ribbon */
+
+/* Screen Watermark Overlay - Clean & High Contrast for White Theme */
+.screenshot-watermark-overlay {
+  position: fixed;
+  bottom: 14px;
+  right: 18px;
+  z-index: 99999;
+  pointer-events: none;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #fed7aa;
+  color: #1f2937;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(238, 77, 45, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Persistent Name Ribbon at Top */
+.student-name-ribbon {
+  background: #ee4d2d; /* Shopee signature orange */
+  color: #ffffff;
+  font-size: 13px;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.shopee-orange-bg {
+  background-color: #ee4d2d;
+}
+.shopee-orange-bg:hover {
+  background-color: #d73211;
+}
+.shopee-orange-text {
+  color: #ee4d2d;
+}
+.shopee-orange-border {
+  border-color: #ee4d2d;
+}

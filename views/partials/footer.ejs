@@ -1,0 +1,120 @@
+  <!-- ============================================================== -->
+  <!-- 4. DEVELOPER QUERY INSPECTOR (SUBTLE & CLEAN FOR LAB GRADING)  -->
+  <!-- ============================================================== -->
+  <% if (locals.lastQuery || locals.sqlError) { %>
+    <aside class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6 w-full">
+      <div class="rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+        <div class="px-4 py-2.5 bg-gray-50 border-b border-gray-200 flex items-center justify-between text-xs">
+          <div class="flex items-center space-x-2 text-gray-700">
+            <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+            <span class="font-bold text-gray-800">Server Query Output</span>
+            <span class="text-gray-400">• (Database inspection feed for screenshots)</span>
+          </div>
+          <button type="button" onclick="document.getElementById('debugDetails').classList.toggle('hidden')" class="text-xs text-[#ee4d2d] hover:underline font-semibold">
+            Toggle Query
+          </button>
+        </div>
+        
+        <div id="debugDetails" class="p-4 space-y-3 font-mono text-xs">
+          <% if (locals.lastQuery) { %>
+            <div>
+              <span class="text-gray-500 uppercase text-[10px] font-bold tracking-wider block mb-1">Executed SQL:</span>
+              <div class="p-3 bg-gray-50 rounded-lg border border-gray-200 text-blue-700 break-all select-all leading-relaxed">
+                <%= lastQuery %>
+              </div>
+            </div>
+          <% } %>
+
+          <% if (locals.sqlError) { %>
+            <div>
+              <span class="text-red-600 uppercase text-[10px] font-bold tracking-wider block mb-1">Database Error:</span>
+              <div class="p-3 bg-red-50 rounded-lg border border-red-200 text-red-600 break-all">
+                <i class="fa-solid fa-triangle-exclamation mr-1"></i> <%= sqlError %>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </aside>
+  <% } %>
+
+  <!-- ============================================================== -->
+  <!-- 5. SHOPEE-STYLE E-COMMERCE FOOTER (CLEAN WHITE THEME)         -->
+  <!-- ============================================================== -->
+  <footer class="mt-auto bg-white border-t border-gray-200 pt-12 pb-8 text-gray-600 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top 4 Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Customer Service -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Customer Service</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="/orders" class="hover:text-[#ee4d2d] transition">Track Parcel</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Shopee Guarantee</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Free Shipping Policy</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Return & Refund</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Help Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- About ShopNova -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">About ShopNova</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">About Us</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Careers</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">ShopNova Mall</a></li>
+            <li><a href="#" class="hover:text-[#ee4d2d] transition">Flash Deals</a></li>
+            <li><a href="/admin" class="hover:text-[#ee4d2d] transition">Seller Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- Payment & Logistics -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Payment & Delivery</h4>
+          <div class="flex flex-wrap gap-2 text-gray-600 text-xl mb-3">
+            <span class="w-10 h-7 border border-gray-200 rounded flex items-center justify-center text-xs font-bold text-blue-600 bg-gray-50">VISA</span>
+            <span class="w-10 h-7 border border-gray-200 rounded flex items-center justify-center text-xs font-bold text-red-500 bg-gray-50">MC</span>
+            <span class="w-10 h-7 border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-orange-600 bg-gray-50">PAY</span>
+            <span class="w-10 h-7 border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-green-600 bg-gray-50">COD</span>
+          </div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-2">Delivery Partners</h4>
+          <div class="text-xs text-gray-500">
+            J&T Express • Ninja Van • SpeedPost • ShopNova Xpress
+          </div>
+        </div>
+
+        <!-- Student Session Info (Clean) -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Active Session</h4>
+          <div class="p-3.5 rounded-xl bg-orange-50/60 border border-orange-100 text-xs space-y-1.5">
+            <div class="text-gray-500">Current Shopper:</div>
+            <div class="text-gray-900 font-bold text-sm"><%= locals.student ? student.name : 'Guest' %></div>
+            <div class="pt-1 border-t border-orange-200/60 flex items-center justify-between text-[11px]">
+              <span class="text-emerald-600 font-medium">● Store Online</span>
+              <a href="/gate" class="text-[#ee4d2d] hover:underline font-semibold">Change Name</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Disclaimer -->
+      <div class="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+        <div>
+          © 2026 ShopNova E-Commerce Pte. Ltd. All Rights Reserved.
+        </div>
+        <div class="mt-2 sm:mt-0 flex items-center space-x-4">
+          <a href="/lab-guide" class="text-gray-400 hover:text-gray-600 underline">Instructor Assignment Guidelines</a>
+          <a href="#" class="hover:text-gray-700">Privacy Policy</a>
+          <a href="#" class="hover:text-gray-700">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

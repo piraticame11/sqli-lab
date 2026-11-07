@@ -1,0 +1,140 @@
+<%- include('partials/header') %>
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="mb-8 text-center max-w-2xl mx-auto">
+    <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#ee4d2d] text-xs font-bold mb-2">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>LAB INSTRUCTIONS & ASSIGNMENT BRIEF</span>
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">SQL Injection Practice Lab</h1>
+    <p class="text-xs text-gray-500 mt-1.5">
+      Welcome, <span class="text-[#ee4d2d] font-bold"><%= student.name %></span>. Complete the 3 challenges below on this e-commerce store and take full-window screenshots for submission.
+    </p>
+  </div>
+
+  <!-- Screenshot Requirement Notice (Clean) -->
+  <div class="mb-8 p-5 rounded-2xl bg-orange-50 border border-orange-200 text-xs">
+    <div class="flex items-center space-x-2 text-[#ee4d2d] font-bold text-sm mb-1.5">
+      <i class="fa-solid fa-camera"></i>
+      <span>Screenshot Grading Requirement</span>
+    </div>
+    <p class="text-gray-700 leading-relaxed">
+      Make sure your browser window includes the top orange bar displaying:
+      <span class="inline-block bg-white text-[#ee4d2d] font-bold px-2 py-0.5 rounded border border-orange-300">
+        Shopper: <%= student.name %>
+      </span>
+      and the live corner watermark. This guarantees you receive full credit for your work.
+    </p>
+  </div>
+
+  <!-- Challenges Cards -->
+  <div class="space-y-6">
+
+    <!-- Challenge 1 -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-gray-100 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-7 h-7 rounded-lg bg-[#ee4d2d] text-white flex items-center justify-center font-bold text-xs">
+            1
+          </span>
+          <h2 class="text-base font-bold text-gray-900">Seller Centre Authentication Bypass</h2>
+        </div>
+        <span class="text-xs font-bold text-[#ee4d2d] bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200 self-start sm:self-auto">
+          25 Points
+        </span>
+      </div>
+
+      <div class="py-3 text-xs text-gray-600 space-y-2">
+        <p>
+          Bypass the password check on the Seller Login form using SQL injection logic to access the restricted seller admin dashboard.
+        </p>
+        <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 font-mono text-[11px] text-gray-700">
+          Target URL: <code class="text-[#ee4d2d]">/login</code> • Query: <code class="text-gray-600">SELECT * FROM users WHERE username = '{user}' AND password = '{pass}'</code>
+        </div>
+        <p class="text-gray-500 font-semibold">
+          Deliverable: Screenshot of the unlocked Seller Centre showing the captured flag: <code class="text-emerald-700 font-bold">FLAG{sh0p_4dm1n_byp4ss_2026}</code> with your name in the top ribbon.
+        </p>
+      </div>
+
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400">Objective: Bypass authentication without knowing the password.</span>
+        <a href="/login" class="px-4 py-2 rounded-xl bg-[#ee4d2d] text-white font-bold text-xs hover:bg-[#d73211] transition">
+          Go to Login →
+        </a>
+      </div>
+    </div>
+
+    <!-- Challenge 2 -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-gray-100 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
+            2
+          </span>
+          <h2 class="text-base font-bold text-gray-900">Product Search UNION-Based SQL Injection</h2>
+        </div>
+        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200 self-start sm:self-auto">
+          40 Points
+        </span>
+      </div>
+
+      <div class="py-3 text-xs text-gray-600 space-y-2">
+        <p>
+          The product search bar concatenates user input into the SQL query without sanitation. Inject a UNION SELECT query to extract hidden data from the <code class="text-gray-800 font-mono">lab_secrets</code> or <code class="text-gray-800 font-mono">users</code> table.
+        </p>
+        <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 font-mono text-[11px] text-gray-700">
+          Target URL: <code class="text-[#ee4d2d]">/catalog?search=</code> • Products query returns 9 columns.
+        </div>
+        <p class="text-gray-500 font-semibold">
+          Deliverable: Screenshot showing the extracted user accounts or secret flag (<code class="text-emerald-700 font-bold">FLAG{un10n_pr0duct_s34rch_fl4g}</code>) in the catalog (or Table View).
+        </p>
+      </div>
+
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400">Hint: Match column count (9 columns) and data types.</span>
+        <a href="/catalog" class="px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition">
+          Go to Catalog →
+        </a>
+      </div>
+    </div>
+
+    <!-- Challenge 3 -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-gray-100 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
+            3
+          </span>
+          <h2 class="text-base font-bold text-gray-900">Parcel Tracking Data Leakage</h2>
+        </div>
+        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 self-start sm:self-auto">
+          35 Points
+        </span>
+      </div>
+
+      <div class="py-3 text-xs text-gray-600 space-y-2">
+        <p>
+          Inject a boolean tautology payload into the parcel tracking search to retrieve all customer orders, home addresses, and private delivery notes simultaneously.
+        </p>
+        <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 font-mono text-[11px] text-gray-700">
+          Target URL: <code class="text-[#ee4d2d]">/orders/track?code=</code> • Query: <code class="text-gray-600">WHERE tracking_number = '{code}'</code>
+        </div>
+        <p class="text-gray-500 font-semibold">
+          Deliverable: Screenshot showing all customer parcel deliveries and private voucher notes (<code class="text-emerald-700 font-bold">FLAG{sql1_ord3r_l34k_succ3ss}</code>).
+        </p>
+      </div>
+
+      <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+        <span class="text-[11px] text-gray-400">Objective: Retrieve all customer records simultaneously.</span>
+        <a href="/orders" class="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition">
+          Go to Parcel Tracker →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100 text-gray-800">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | ShopNova</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+</head>
+
+<body class="h-full flex flex-col justify-between selection:bg-orange-500 selection:text-white bg-gray-50">
+
+  <!-- Top Simple Navigation Bar -->
+  <header class="bg-white border-b border-gray-200 py-3.5 px-6 shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2.5">
+        <div
+          class="w-10 h-10 rounded-xl bg-[#ee4d2d] flex items-center justify-center shadow-md shadow-orange-500/30 text-white text-lg">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-[#ee4d2d]">Shop<span
+              class="text-gray-900">Nova</span></span>
+          <span class="block text-[11px] text-gray-500 font-medium -mt-1">Online Shopping Mall</span>
+        </div>
+      </div>
+      <div class="text-xs text-gray-500 flex items-center space-x-1">
+        <i class="fa-solid fa-headset text-orange-500"></i>
+        <span>Customer Support 24/7</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Central Welcome Form Card -->
+  <main class="flex-1 flex items-center justify-center p-6">
+    <div class="max-w-md w-full bg-white border border-gray-200 rounded-2xl shadow-xl p-8 relative">
+
+      <div class="text-center mb-6">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-50 text-[#ee4d2d] text-2xl mb-4 shadow-sm border border-orange-100">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-900 tracking-tight">Welcome to ShopNova!</h1>
+        <p class="text-sm text-gray-500 mt-1.5 leading-relaxed">
+          Please enter your name below to begin shopping and access member deals.
+        </p>
+      </div>
+
+      <% if (locals.error) { %>
+        <div
+          class="mb-5 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-center space-x-2">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>
+            <%= error %>
+          </span>
+        </div>
+        <% } %>
+
+          <form action="/gate/submit" method="POST" class="space-y-5">
+            <input type="hidden" name="returnTo" value="<%= locals.returnTo || '/' %>">
+
+            <div>
+              <label for="studentName" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                Your Full Name <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="fa-regular fa-user"></i>
+                </div>
+                <input type="text" id="studentName" name="studentName" required autofocus
+                  placeholder="Enter your name (e.g. Sarah Tan)" value="<%= locals.currentName || '' %>"
+                  class="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ee4d2d] focus:border-transparent transition text-sm font-medium">
+              </div>
+            </div>
+
+            <div
+              class="p-3 rounded-xl bg-orange-50/70 border border-orange-100 text-xs text-gray-600 flex items-start space-x-2.5">
+              <i class="fa-solid fa-circle-info text-[#ee4d2d] mt-0.5 text-sm"></i>
+              <span>Your name will be displayed in the top header as your active shopper profile.</span>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3.5 px-4 rounded-xl bg-[#ee4d2d] hover:bg-[#d73211] text-white font-bold text-sm shadow-lg shadow-orange-500/25 transition flex items-center justify-center space-x-2">
+              <span>Start Shopping</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+          </form>
+    </div>
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="py-4 bg-white border-t border-gray-200 text-center text-xs text-gray-500">
+    © 2026 ShopNova E-Commerce Pte. Ltd. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

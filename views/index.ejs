@@ -1,0 +1,217 @@
+<%- include('partials/header') %>
+
+<!-- Top Promotion Banner (Shopee Style) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    
+    <!-- Main Large Carousel / Promo Hero -->
+    <div class="lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm bg-gradient-to-r from-orange-500 to-[#ee4d2d] text-white p-8 sm:p-12 flex flex-col justify-between min-h-[280px]">
+      <div class="relative z-10 max-w-lg">
+        <span class="inline-block bg-white/20 backdrop-blur px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-3">
+          ⚡ 11.11 Mega Shopping Fest
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+          Up to 70% Off Top Brands + Free Shipping!
+        </h1>
+        <p class="text-white/90 text-sm mt-2">
+          Discover hot deals on wireless headphones, smart gadgets, and trending fashion.
+        </p>
+      </div>
+
+      <div class="relative z-10 mt-6 flex items-center space-x-3">
+        <a href="/catalog" class="px-6 py-2.5 rounded-lg bg-white text-[#ee4d2d] font-bold text-sm shadow-md hover:bg-orange-50 transition">
+          Shop Deals Now
+        </a>
+        <a href="/orders" class="px-4 py-2.5 rounded-lg bg-black/20 hover:bg-black/30 backdrop-blur text-white font-semibold text-sm transition">
+          Track Parcel
+        </a>
+      </div>
+
+      <!-- Subtle background graphic pattern -->
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-white/10 rounded-full pointer-events-none"></div>
+    </div>
+
+    <!-- Side Two Mini Promo Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 text-white flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider bg-white/20 px-2.5 py-0.5 rounded">NEW ARRIVALS</span>
+          <h3 class="text-lg font-bold mt-1">Smart Wearables & Audio</h3>
+          <p class="text-xs text-white/80 mt-1">Latest noise-cancelling tech</p>
+        </div>
+        <a href="/catalog?category=Electronics" class="text-xs font-bold underline mt-4 self-start">Explore Category →</a>
+      </div>
+
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 text-white flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider bg-white/20 px-2.5 py-0.5 rounded">VOUCHER DROP</span>
+          <h3 class="text-lg font-bold mt-1">Free Delivery All Orders</h3>
+          <p class="text-xs text-white/80 mt-1">No minimum spend required</p>
+        </div>
+        <a href="/catalog" class="text-xs font-bold underline mt-4 self-start">Claim Voucher →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Quick Shopee Categories Row -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
+    <div class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Popular Categories</div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      
+      <a href="/catalog?category=Electronics" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-orange-50/60 transition group border border-transparent hover:border-orange-100">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-laptop"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 group-hover:text-[#ee4d2d]">Electronics</h4>
+          <span class="text-xs text-gray-500">Audio, Watches & PCs</span>
+        </div>
+      </a>
+
+      <a href="/catalog?category=Fashion" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-orange-50/60 transition group border border-transparent hover:border-orange-100">
+        <div class="w-12 h-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-shirt"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 group-hover:text-[#ee4d2d]">Fashion</h4>
+          <span class="text-xs text-gray-500">Hoodies & Sneakers</span>
+        </div>
+      </a>
+
+      <a href="/catalog?category=Appliances" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-orange-50/60 transition group border border-transparent hover:border-orange-100">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-blender"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 group-hover:text-[#ee4d2d]">Appliances</h4>
+          <span class="text-xs text-gray-500">Air Fryers & Coffee</span>
+        </div>
+      </a>
+
+      <a href="/catalog?category=Home%20%26%20Living" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-orange-50/60 transition group border border-transparent hover:border-orange-100">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-couch"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-gray-800 group-hover:text-[#ee4d2d]">Home & Living</h4>
+          <span class="text-xs text-gray-500">Office & Tumblers</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Flash Deals Header with Countdown -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+  <div class="bg-white rounded-t-2xl p-5 border-b border-gray-100 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-1.5 text-[#ee4d2d] font-black text-xl tracking-tight uppercase">
+        <i class="fa-solid fa-bolt"></i>
+        <span>FLASH DEALS</span>
+      </div>
+      <div class="flex items-center space-x-1 text-xs font-mono font-bold">
+        <span class="bg-black text-white px-2 py-1 rounded">02</span>
+        <span>:</span>
+        <span class="bg-black text-white px-2 py-1 rounded">45</span>
+        <span>:</span>
+        <span class="bg-[#ee4d2d] text-white px-2 py-1 rounded">18</span>
+      </div>
+    </div>
+    <a href="/catalog" class="text-xs font-bold text-[#ee4d2d] hover:underline flex items-center space-x-1">
+      <span>See All Deals</span>
+      <i class="fa-solid fa-chevron-right text-[10px]"></i>
+    </a>
+  </div>
+
+  <!-- Featured Products Grid -->
+  <div class="bg-white rounded-b-2xl p-5 border border-t-0 border-gray-200 shadow-sm">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      <% featuredProducts.forEach(product => { %>
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-orange-300 transition flex flex-col group relative">
+          
+          <!-- Discount Tag Badge (Shopee Style) -->
+          <span class="absolute top-2 left-2 z-10 bg-yellow-400 text-yellow-950 font-black text-[11px] px-2 py-0.5 rounded shadow-sm">
+            -25% OFF
+          </span>
+
+          <!-- Product Image -->
+          <div class="relative h-44 sm:h-52 bg-gray-100 overflow-hidden">
+            <img 
+              src="<%= product.image_url %>" 
+              alt="<%= product.name %>" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80'"
+            >
+          </div>
+
+          <!-- Product Details -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] text-gray-500 font-semibold uppercase"><%= product.category %></span>
+              <h3 class="text-sm font-semibold text-gray-800 group-hover:text-[#ee4d2d] transition line-clamp-2 mt-1 leading-snug">
+                <a href="/product/<%= product.id %>">
+                  <%= product.name %>
+                </a>
+              </h3>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-gray-100">
+              
+              <!-- Free Shipping Pill -->
+              <div class="inline-block bg-teal-50 text-teal-700 text-[10px] font-bold px-1.5 py-0.5 rounded border border-teal-200 mb-1.5">
+                🚚 FREE SHIPPING
+              </div>
+
+              <!-- Price & Sold Count -->
+              <div class="flex items-baseline justify-between">
+                <div class="text-lg font-black text-[#ee4d2d]">
+                  $<%= Number(product.price).toFixed(2) %>
+                </div>
+                <div class="text-[11px] text-gray-400">
+                  <%= product.sales_count || '1.2k' %> sold
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- Shopee Benefits Banner -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="bg-orange-50/60 border border-orange-200/80 rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-white text-[#ee4d2d] flex items-center justify-center text-xl shadow-sm mb-2">
+        <i class="fa-solid fa-shield-heart"></i>
+      </div>
+      <h4 class="font-bold text-gray-800 text-sm">100% Authentic Guarantee</h4>
+      <p class="text-xs text-gray-500 mt-0.5">Direct from authorized official brand distributors</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-white text-[#ee4d2d] flex items-center justify-center text-xl shadow-sm mb-2">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <h4 class="font-bold text-gray-800 text-sm">Free Islandwide Delivery</h4>
+      <p class="text-xs text-gray-500 mt-0.5">Express shipping right to your doorstep with live tracking</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-white text-[#ee4d2d] flex items-center justify-center text-xl shadow-sm mb-2">
+        <i class="fa-solid fa-arrow-rotate-left"></i>
+      </div>
+      <h4 class="font-bold text-gray-800 text-sm">15-Day Free Returns</h4>
+      <p class="text-xs text-gray-500 mt-0.5">Hassle-free refunds if you change your mind</p>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
