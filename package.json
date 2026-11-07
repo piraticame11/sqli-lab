@@ -1,7 +1,7 @@
 {
-  "name": "aegis-security-lab",
+  "name": "shopnova-sqli-lab",
   "version": "1.0.0",
-  "description": "Realistic enterprise hardware portal vulnerable to SQL Injection for cybersecurity training and lab screenshots",
+  "description": "Realistic Shopee-style e-commerce store vulnerable to SQL Injection for cybersecurity lab training and screenshot verification",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
