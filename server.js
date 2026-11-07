@@ -42,9 +42,10 @@ app.use((req, res, next) => {
 // Student Gate Interceptor Middleware
 // Enforces that students enter their name before navigating the site
 function requireStudentGate(req, res, next) {
-  // Always permit static files, gate route, and gate submission
+  // Always permit static files, favicon, gate route, and gate submission
   if (
     req.path.startsWith('/public') ||
+    req.path === '/favicon.ico' ||
     req.path === '/gate' ||
     req.path === '/gate/submit'
   ) {
@@ -75,6 +76,12 @@ function requireStudentGate(req, res, next) {
   const returnTo = req.originalUrl || '/';
   return res.redirect(`/gate?returnTo=${encodeURIComponent(returnTo)}`);
 }
+
+// Favicon Route
+app.get('/favicon.ico', (req, res) => {
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.sendFile(path.join(__dirname, 'public', 'favicon.svg'));
+});
 
 app.use(requireStudentGate);
 
